@@ -27,13 +27,13 @@ function calculateTax(amt) {
 
 // Write a function named formatAmount which returns you amount in this format '$ 132.45' make the decimal fixed to 2 places.
 function formatAmount(amt) {
-  return "$" + amt.toFixed (2);
+  return "$ " + amt.toFixed (2);
 }
 
 
 //After you've calculated your purchase amount, add in the tax, then print out the calculated purchase amount, properly formatted.
 amount += calculateTax(amount);
-console.log("Purchase amount" +formatAmount(amount));
+console.log("Purchase amount :" +formatAmount(amount));
 
 
 //Finally, check the amount against your bank account balance to see if you can afford it or not.
@@ -42,21 +42,40 @@ if(amount<bank_balance)
 else
     alert("you cant purchase the item");
 
+console.log("no of phone=" + PHONE_NO);
+console.log("no of accesories=" + ACCESSORY_NO);
+
+
 
 // Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.
+    // var i = 1;
+    // while (i <= 100) {
+    //   if ((i%3)==0 && (i%5)==0) {
+    //     console.log("fizzbuzz");
+    //   }
+    //   else
+    //     if ((i % 3) == 0 || (i % 5) == 0){
+    //       if ((i % 3) == 0)
+    //         console.log("fizz");
+    //       if ((i % 5) == 0) 
+    //         console.log("buzz");
+    //     }
+    //     else
+    //     console.log(i);
+    //   i++;
+    // }
+
 var i = 1;
-while (i <= 100) {
-  if ((i%3)==0 && (i%5)==0) {
-    console.log("fizzbuzz");
-  }
-  else
-    if ((i % 3) == 0 || (i % 5) == 0){
-      if ((i % 3) == 0)
-        console.log("fizz");
-      if ((i % 5) == 0) 
-        console.log("buzz");
-    }
-    else
-    console.log(i);
+while (i <= 100){
+    if(i % 15 == 0)
+      console.log("fizzbuzz")
+      else
+        if ((i % 3) == 0)
+          console.log("fizz");
+          else
+            if ((i % 5) == 0)
+              console.log("buzz");
+              else
+                console.log(i);
   i++;
 }
