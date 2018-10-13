@@ -15,7 +15,7 @@ var amount = 0;
 while (amount < bank_balance) {
   amount += PHONE_PRICE;
   PHONE_NO++;
-  if (amount < SPENDING_THRESHOLD){
+  if (amount < SPENDING_THRESHOLD) {
     amount += ACCESSORY_PRICE;
     ACCESSORY_NO++;
   } 
@@ -33,14 +33,16 @@ function formatAmount(amt) {
 
 //After you've calculated your purchase amount, add in the tax, then print out the calculated purchase amount, properly formatted.
 amount += calculateTax(amount);
-console.log("Purchase amount :" +formatAmount(amount));
+console.log("Purchase amount :" + formatAmount(amount));
 
 
 //Finally, check the amount against your bank account balance to see if you can afford it or not.
-if(amount<bank_balance)
-    alert("you can purchase Total ammount is =" + formatAmount(amount));
-else
+if(amount < bank_balance) {
+    alert("you can purchase Total ammount is =" + formatAmount(amount) );
+  }
+else {
     alert("you cant purchase the item");
+  }
 
 console.log("no of phone=" + PHONE_NO);
 console.log("no of accesories=" + ACCESSORY_NO);
@@ -50,7 +52,7 @@ console.log("no of accesories=" + ACCESSORY_NO);
 // Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.
     // var i = 1;
     // while (i <= 100) {
-    //   if ((i%3)==0 && (i%5)==0) {
+    //   if ((i%  3)== 0 && (i % 5) == 0) {
     //     console.log("fizzbuzz");
     //   }
     //   else
@@ -66,16 +68,22 @@ console.log("no of accesories=" + ACCESSORY_NO);
     // }
 
 var i = 1;
-while (i <= 100){
-    if(i % 15 == 0)
-      console.log("fizzbuzz")
-      else
-        if ((i % 3) == 0)
-          console.log("fizz");
-          else
-            if ((i % 5) == 0)
-              console.log("buzz");
-              else
-                console.log(i);
+while (i <= 100) {
+  if (i % 15 == 0) {
+    console.log("fizzbuzz")
+  }
+  else {
+    if ( (i % 3) == 0) {
+      console.log("fizz");
+    }
+    else {
+      if ( (i % 5) == 0) {
+        console.log("buzz");
+      }
+      else {
+        console.log(i);
+      }
+    }
+  }
   i++;
 }
