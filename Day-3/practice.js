@@ -2,7 +2,7 @@
 // takes 4 arguments: number of children, partner's name, geographic location, job title.
 // outputs your fortune to the screen like so: "You will be a X in Y, and married to Z with N kids."
 function tellFortune(numberOfChildren, partnerName, geographicLocation, jobTitle) {
-  console.log(`You will be a ${jobTitle} in ${geographicLocation}, and married to ${partnerName} with ${numberOfChildren} kids`); 
+  console.log(`You will be a ${jobTitle} in ${geographicLocation}, and married to ${partnerName} with ${numberOfChildren} kids`);
 }
 
 
@@ -12,8 +12,8 @@ function tellFortune(numberOfChildren, partnerName, geographicLocation, jobTitle
 // calculates your dog's age based on the conversion rate of 1 human year to 7 dog years.
 // outputs the result to the screen like so: "Your doggie is NN years old in dog years!"
 // Add an additional argument to the function that takes the conversion rate of human to dog years.
-function calculateDogAge(puppyAge,humanAge) {
-  if(humanAge){
+function calculateDogAge(puppyAge, humanAge) {
+  if (humanAge) {
     console.log(`Your doggie is ${puppyAge * 7} years old in dog years!`);
     console.log(`Your Age is ${humanAge * 7} years old in dog years!`);
   }
@@ -28,8 +28,8 @@ function calculateDogAge(puppyAge,humanAge) {
 // calculates the amount consumed for rest of the life (based on a constant max age).
 // outputs the result to the screen like so: "You will need NN to last you until the ripe old age of X"
 // Accept floating point values for amount per day, and round the result to a round number.
-const MAX_AGE=70;
-function calculateSupply(age,amount) {
+const MAX_AGE = 70;
+function calculateSupply(age, amount) {
   var supply = (MAX_AGE - age) * amount * 365;
   console.log(`You will need ${supply} to last you until the ripe old age of ${MAX_AGE}`);
 }
@@ -41,10 +41,10 @@ function calculateSupply(age,amount) {
 // Now store a fahrenheit temperature into a variable.
 // Convert it to celsius and output "NN°F is NN°C."
 function celsiusToFahrenheit(tempC) {
-  console.log(`${tempC}°C is ${(tempC * 1.8) + 32}°F`); 
+  console.log(`${tempC}°C is ${(tempC * 1.8) + 32}°F`);
 }
 
-var fahrenheitToCelsius = (tempC) => console.log(`${tempC}°F is ${(tempC - 32) * (5/9) }°C`)
+var fahrenheitToCelsius = (tempC) => console.log(`${tempC}°F is ${(tempC - 32) * (5 / 9)}°C`)
 
 
 
@@ -91,7 +91,7 @@ function checkAge(age) {
 // Make two variants of checkAge:
 // Using a question mark operator ?
 function newAge(age) {
-  var result=(age > 18) ?true:confirm('Do you have your parents permission to access this page?');
+  var result = (age > 18) ? true : confirm('Do you have your parents permission to access this page?');
 }
 // Using OR ||
 
@@ -103,21 +103,20 @@ function newAge(age) {
 // pow(1, 100) = 1 * 1 * ...* 1 = 1
 // Use prompt to take values for x and n, and then shows the result of pow(x,n) using alert.
 // In this task the function should support only natural values of n: integers up from 1.
-function pow(x,n) {
-  if(!x || !n){
+function pow(x, n) {
+  if (!x || !n) {
     x = prompt("entre value Of X as in X^n ");
     n = prompt("entre value Of n as in X^n ")
   }
-  if(n >= 1 || Number.isInteger(n))
-  {
+  if (n >= 1 || Number.isInteger(n)) {
     result = 1;
-    for(var i = 0;i < n; i++){
+    for (var i = 0; i < n; i++) {
       result *= x;
     }
     return result;
-  }  
-  else 
-  console.log("invalid n value")
+  }
+  else
+    console.log("invalid n value")
 }
 
 
@@ -127,26 +126,27 @@ function ifVowel() {
   var ar = str.split('');
   var noOfVowel = 0;
   for (let i = 0; i < ar.length; i++) {
-    if (ar[i] == 'a' || ar[i] == 'A' || ar[i] == 'e' || ar[i] == 'E' || ar[i] == 'i'|| ar[i] == 'I' || ar[i] == 'o' || ar[i] == 'O' || ar[i] == 'U' || ar[i] == 'u')
-    noOfVowel++;
+    if (ar[i] == 'a' || ar[i] == 'A' || ar[i] == 'e' || ar[i] == 'E' || ar[i] == 'i' || ar[i] == 'I' || ar[i] == 'o' || ar[i] == 'O' || ar[i] == 'U' || ar[i] == 'u') {
+      noOfVowel++;
+    }
   }
-  return(`No of Vowels = ${noOfVowel}`);
+  return (`No of Vowels = ${noOfVowel}`);
 }
 
 // Checks if the string entered by the user is a palindrome. That is that it reads the same forwards as backwards like “racecar”
 function ifPalindrome() {
   var str = prompt("enter a string");
   var ar = str.split('');
-  var isPal=true;
-  for (let i = 0,let j = (ar.length -1); i < ar.length/2; i++, j--) {
-      if(!(ar[i] == ar[j])){
-        isPal = false;
-      }
+  var isPal = true;
+  for (let i = 0, let j = (ar.length - 1); i < ar.length / 2; i++ , j--) {
+    if (!(ar[i] == ar[j])) {
+      isPal = false;
+    }
   }
-  if(isPal)
-    return(`${str} is Palindrome`);
+  if (isPal)
+    return (`${str} is Palindrome`);
   else
-    return(`${str} is  not Palindrome`);
+    return (`${str} is  not Palindrome`);
 }
 
 // Counts the number of individual words in a string. For added complexity read these strings in from a text file and generate a summary.
@@ -157,46 +157,44 @@ function noWords() {
   return (`No of Words = ${noWords}`);
 }
 // Show the following output using one loop.
-    // 1, 2, 3, 4, 5
-    // 6, 7, 8, 9, 10
-    function loopOutput() {
-      var ar = [];
-      for (i = 1 ;i <= 10 ; i++)
-      {
-        ar.push(i);
-        if (i == 5) {
-          ar.push('\n');
-        }
-      }
-      console.log(ar);
+// 1, 2, 3, 4, 5
+// 6, 7, 8, 9, 10
+function loopOutput() {
+  var ar = [];
+  for (i = 1; i <= 10; i++) {
+    ar.push(i);
+    if (i == 5) {
+      ar.push('\n');
     }
+  }
+  console.log(ar);
+}
 
 
 // Write a program that asks the user for a number n and gives them the possibility to choose between computing the sum and computing the product of 1,…,n.
 function sOrP() {
   var n = prompt("entre number n");
   n = Number(n);
-  var sum = 0 ,pro = 1 ;
-  var check=prompt(`entre \n 1 for sum 1 to n \n 2 for product 1 to n `);
+  var sum = 0, pro = 1;
+  var check = prompt(`entre \n 1 for sum 1 to n \n 2 for product 1 to n `);
   for (let i = 1; i <= n; i++) {
     sum += i;
     pro *= i;
   }
-  if (check == '1')
-  {
+  if (check == '1') {
     return (`Sum is ${sum}`)
   }
   if (check == `2`)
     return (`product is ${pro}`)
   else
-  return (`invalid choice`);
+    return (`invalid choice`);
 }
 
 
 // Write a function that returns the largest element in a list.
 function list() {
   var nstr = prompt(`entre string of arraay`)
-  
+
 }
 
 
@@ -218,8 +216,8 @@ function sumN57() {
   var sum = 0;
   n = Number(n);
   for (let i = 1; i <= n; i++) {
-    if((i % 5 == 0) || (i % 7 == 0))
-    sum += i;
+    if ((i % 5 == 0) || (i % 7 == 0))
+      sum += i;
   }
   return (`Sum is ${sum}`)
 }
@@ -227,11 +225,11 @@ function sumN57() {
 // Write a program that takes a number under (25) and prints the multiplication table for the number.
 function multable() {
   var x = prompt(`entre value of X`);
-  if (x <= 25){
+  if (x <= 25) {
     for (let i = 1; i <= 10; i++) {
-      console.log(`${x} X ${i} = ${x*i}`);
+      console.log(`${x} X ${i} = ${x * i}`);
     }
   }
   else
-  return (`No is Greater than 25`)
+    return (`No is Greater than 25`)
 }

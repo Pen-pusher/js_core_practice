@@ -1,11 +1,11 @@
 // Practice for scope and closure
 // Write 'global' or 'local' infront of the line based on scope.
-const dob = 2001;
+const dob = 2001; //global
 const countAge = (name) => {
-  const x = 2018;
+  const x = 2018; //local
   return x - dob;
 }
-var name = true;
+var name = true;  //global
 
 
 //What's the output?
@@ -17,6 +17,7 @@ const countValue = (num) => {
 }
 
 console.log(x);
+//100
 
 
 
@@ -30,9 +31,11 @@ const changer = () => {
 console.log(a);
 changer();
 console.log(a);
+//
 
-
-// Output
+// Output 
+// 100
+// 101
 
 let a = 5;
 let b = 10;
@@ -44,7 +47,7 @@ const sum = () => {
 
 sum();
 
-// Output
+// Output   110
 
 const makeBook = () => {
   const name = "The perks of being a wallflower.";
@@ -56,8 +59,8 @@ const makeBook = () => {
   return printName;
 }
 
-const myBook = createBook();
-myBook();
+const myBook = createBook(); //not declared 
+myBook();                     //not declared
 
 // Output
 function makeCounter() {
@@ -76,3 +79,7 @@ console.log(counter);
 console.log(counter1);
 console.log(counter1);
 
+// 0
+// 1
+// 0
+// 1
