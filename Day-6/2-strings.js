@@ -65,6 +65,10 @@ function truncate(str, n) {
 // Write a JavaScript function to alphabetize a given string.(A -z)
 // Input (String) -> 'United States'
 // Output 'SUadeeinsttt'
+function arSort(str) {
+  var newArr = str.split('').filter(v => v != " ").sort().join('');
+  return newArr;
+}
 
 
 
@@ -75,5 +79,9 @@ function truncate(str, n) {
 function caseins(str1, str2) {
   var Ustr2 = str2.toUpperCase();
   var Ustr1 = str1.toUpperCase();
-
+  result = false;
+  if(Ustr1 === Ustr2) {
+    result = true;
+  }
+  return result
 }
