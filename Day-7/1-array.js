@@ -7,42 +7,87 @@ var strings = ['this','is','a','collection','of','words'];
 
 
 // Find largest number in numbers
-
+function isLargest() {
+  var big=numbers[0];
+  numbers.forEach(element => {if(element > big) big = element;});
+  return big; 
+}
 
 // Find longest string in strings
+function isLongest(arr) {
+  var long = arr[0];
+  for (i = 0; i < arr.length; i++) {
+    if (long.length < arr[i].length) {
+      long = arr[i];
+    }
+  }
+  return long;
+}
 
 
 // Find all the even numbers
+function evens() {
+  var newArr = numbers.filter(v => v % 2 == 0)
+  return newArr
+}
 
 
 // Find all the odd numbers
-
+  function evens() {
+    var newArr = numbers.filter(v => v % 2 != 0)
+    return newArr
+  }
 
 // Find all the words that contain 'is' use string method 'contains'
-
+function iscontains(arr) {
+  var newArr = arr.filter(x => x.includes('is') );
+  return newArr;
+}
 
 // Find all the words that contain 'is' use string method 'indexOf'
-
+function isIndexof(arr) {
+  var newArr = arr.filter(x => x.indexOf('is') != -1);
+  return newArr;
+}
 
 // Check if all the numbers in numbers array are divisible by three use array method (every)
-
+function checkEvery(arr) {
+  return arr.every(v => v % 3 == 0 )
+}
 
 
 
 //  Sort Array from smallest to largest
+function sorting(arr) {
+  var newArr = arr.slice();
+  return newArr.sort();
+}
 
 
 // Remove the last word in strings
+function lastword(str) {
+  var newstr = str.split(' ').pop().join(" ");
+  return newstr;
+
+}
 
 
 // Add a new word in the array
+function lastword(arr, word) {
+  return arr.push(word);
 
+}
 
 // Remove the first word in the array
+function remFirst(arr) {
+  return arr.shift();
+}
 
 
 // Place a new word at the start of the array use (upshift)
-
+function addFirst(arr, new) {
+  return arr.unshift(new);
+}
 
 
 // Make a subset of numbers array [18,9,7,11]
@@ -71,4 +116,6 @@ var customers = [
 
 
 // Sort the array created above alphabetically
+var newArr = customers.filter(v => v.firstname.indexOf('J') == 0 ).map(v => v.firstname + ' ' + v.lastname).sort();
+console.log(newArr);
 
