@@ -91,16 +91,26 @@ function addFirst(arr, new) {
 
 
 // Make a subset of numbers array [18,9,7,11]
+function subsetNum() {
+  return numbers.slice(3,7);
+}
 
 
 // Make a subset of strings array ['a','collection']
-
+function subsetNum() {
+  return strings.slice(2, 4);
+}
 
 // Replace 12 & 18 with 1221 and 1881
-
+function replaceN() {
+  numbers[numbers.indexOf(12)] = 1221;
+  numbers[numbers.indexOf(18)] = 1881;
+}
 
 // Replace words with string in strings array
-
+function replaceS() {
+  strings[string.indexOf("words")] = "string";
+}
 
 
 // Customers Array
