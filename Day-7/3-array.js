@@ -14,6 +14,15 @@ var words = [
 
 // Write a function uniqueArray that receives an array of words as a parameter. And remove the duplicates, and return a new array. 
 // (indexOf)
+function uniqueArray(arr) {
+ var newArr = [];
+  for (i = 0; i < arr.length; i++) {
+    if (newArr.indexOf(arr[i]) === -1) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
 
 
 
@@ -29,7 +38,20 @@ var words2 = [
 ];
 
 // Write a function doesWordExist that will take in an array of words as one argument, and a word to search for as the other. Return true if it exists, otherwise, return false. Don't use indexOf for this one.
-
+function Exist(arr, word) {
+  var flag = 0;
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] === word) {
+      flag = 1;
+    }
+  }
+  if (flag) {
+    return true;
+  } 
+  else {
+    return false;
+  }
+}
 
 
 
@@ -49,7 +71,20 @@ var words3 = [
 
 
 // Write a function howManyTimes that will take in an array of words as one argument, and a word to search for as the other. The function will return the number of times that word appears in the array.
-
+function timesExist(arr, word) {
+  var count = 0;
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] === word) {
+      count++;
+    }
+  }
+  if (flag) {
+    return count;
+  }
+  else {
+    return (`${word} dosent exist`)
+  }
+}
 
 
 // Bonus Question (Solve only if you have time)
