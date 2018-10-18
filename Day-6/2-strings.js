@@ -26,9 +26,9 @@ function count(mainStr, subStr) {
   for(let i = 0; i < mainStr.length; i++) {
     var flag = 1;
     for(let j = 0,k = i ; j < subStr.length; j++, k++) {
-      if( !(subStr[j] == mainStr[k]) ) {
+      if( !(subStr[j].toUpperCase == mainStr[k].toUpperCase) ) {
         flag = 0;
-        break;
+        break;  
       }
     }
     if(flag) {
