@@ -1,0 +1,23 @@
+li {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100px 200px 100px;
+      grid-template-columns: 100px 200px 100px;
+}
+
+.check {
+  width: 50px;
+  height: 30px;
+}
+
+.checktrue {
+  text-decoration: line-through;
+  color: rgba(255, 0, 0, 0.726);
+}
+
+.output p {
+  font-size: 1.5rem;
+  letter-spacing: 1.1;
+  font-weight: bold;
+}
+/*# sourceMappingURL=style.css.map */
