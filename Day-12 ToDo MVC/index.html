@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="skeleton.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+  <section class="main-wrapper">
+    <h1>TODOs</h1>
+    <section class="todolist">
+      <div class="input-container">
+        <form id="form">
+          <i> </i>
+          <input type="text" class="input-box" id="input" placeholder="Write ToDos Here..."/>
+        </form>
+      </div>  
+      <ul class="output-box" id="output">
+        <li class="list-item">
+          <input type="checkbox" class="check">
+          <span class="list-text"></span>
+          <button>edit</button>
+          <button>delete</button>
+        </li>
+      </ul>
+      <div class="base" id="base">
+        <span id="counter"></span>
+        <div>
+          <button class="baseBtn all">All</button>
+          <button active" class="baseBtn active">Active</button>
+          <button class="baseBtn complete">Complete</button>
+        </div>
+        <button class="baseBtn clrBtn">Clear Complete</button>
+      </div>
+    </section>
+    
+    <script src="main.js"></script>
+  </body>
+  </html>

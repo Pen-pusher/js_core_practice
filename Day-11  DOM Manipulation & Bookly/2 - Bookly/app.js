@@ -45,7 +45,7 @@ function addBook(e) {
     updtStrg();
     rndrBooks(htmlList);
   }
-  input.value = '';
+  input.value = '';	
   return;
 }
 

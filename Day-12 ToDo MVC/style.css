@@ -1,0 +1,25 @@
+.list-item{
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.main-wrapper{
+  /* text-align: center; */
+  width: 70%;
+  margin: 0 auto;
+}
+.input-container{
+  text-align: center;
+}
+.input-box{
+  width: 80%;
+}
+h1 {
+  text-align: center;
+}
+.base{
+  text-align: center;
+}
+.strike{
+  color: darkgrey;
+  text-decoration: line-through;
+}
