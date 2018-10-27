@@ -157,14 +157,11 @@ function edit(index) {
         <button class="done" data-id="${index}">done</button>
       </li>`
   );
-  // console.log(editstr);
   var newList = htmlList.map((v,i) => {
     if(index == i) {
       return editstr;
     } else return v;
   });
-  // htmlList =  newList;
-  // console.log(newList);
   rndrTodo(newList);
 }
 
