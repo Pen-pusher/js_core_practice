@@ -1,0 +1,149 @@
+body {
+  color: #FFF;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.container {
+  background-size: cover;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.main-wrapper {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 8fr 3fr;
+      grid-template-columns: 8fr 3fr;
+}
+
+.left-sec {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: .3fr .4fr 1fr;
+      grid-template-rows: .3fr .4fr 1fr;
+  text-shadow: 0 0 2px rgba(70, 70, 70, 0.678), 0 0 5px rgba(70, 70, 70, 0.678), 0 0 8px rgba(70, 70, 70, 0.678), 0 0 10px rgba(70, 70, 70, 0.678);
+}
+
+.right-sec {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+}
+
+.clock {
+  font-family: 'Special Elite', cursive;
+  font-size: 6rem;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  margin-top: 3rem;
+}
+
+.left_mid {
+  font-family: 'Charmonman', cursive;
+  font-size: 3rem;
+  text-align: left;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.left_mid input {
+  background: transparent;
+  border: none;
+  color: blanchedalmond;
+  font-family: Courier;
+  border-bottom: 1px white solid;
+}
+
+.left_mid input:focus {
+  outline: none;
+}
+
+.left_mid .greet {
+  font-family: "Rock Salt";
+}
+
+.left_last {
+  place-self: center;
+}
+
+.left_last .quote-section {
+  padding: 0 20px;
+}
+
+.left_last .quotes {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-family: 'Calligraffitti', cursive;
+}
+
+.left_last .quotes .fa-quote-left, .left_last .quotes .fa-quote-right {
+  font-size: 1rem;
+  vertical-align: top;
+}
+
+.left_last .author {
+  text-align: right;
+  font-size: 2rem;
+  font-family: 'Annie Use Your Telescope', cursive;
+}
+
+.todoFrame {
+  color: #222222;
+  background: rgba(245, 245, 245, 0.39);
+  padding: 1.2rem .8rem;
+  border: 1px rgba(141, 77, 77, 0.904) solid;
+  margin-top: 3rem;
+}
+
+.todoFrame input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.747);
+  border: none;
+  height: 30px;
+}
+
+.show-todo {
+  padding: 0 0 5px 0;
+  list-style: none;
+}
+
+.show-todo .lbtn {
+  background: transparent;
+  border: none;
+  padding: 3px;
+}
+
+.show-todo .list-item {
+  display: -ms-grid;
+  display: grid;
+  background: rgba(255, 255, 255, 0.24);
+  border: 1px rgba(98, 98, 98, 0.753) solid;
+  border-top: none;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  width: 100%;
+  height: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+}
+
+.show-todo .check {
+  background: transparent;
+  width: 20px;
+  height: 20px;
+  border: 1px white solid;
+}
+/*# sourceMappingURL=main.css.map */

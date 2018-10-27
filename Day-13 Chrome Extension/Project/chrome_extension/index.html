@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AltCampus New Tab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Cabin+Sketch:700|Calligraffitti|Charmonman:700|Special+Elite"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/normalize.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+</head>
+
+<body>
+  <section class="container">
+    <section class="main-wrapper">
+
+      <section class="left-sec">
+
+        <section class="left_top">
+          <div class="clock" id="clock">06:58</div>
+        </section>
+
+        <section class="left_mid">
+          <div class="greeting" id="greet"></div>
+          <div class="prompt">
+            <div class="question">Hello, What's your name?</div>
+            <input id="name" class="prompt-name" >
+          </div>
+        </section>
+
+        <section class="left_last">
+          <div class="quote-section">
+            <div class="quotes"></div>
+            <div class="author"></div>
+          </div>
+        </section>
+
+      </section>
+
+      <section class="right-section">
+        <section class="todoFrame">
+          <section class="todo-input">
+            <h2>Todo List</h2>
+            <form id="form" class="add-todo">
+              <input type="text" id="todoInput" name="todoText" placeholder="ToDo Text" required>
+            </form>
+          </section>
+
+          <section class="todo-output">
+            <ul class="show-todo" id="todoOutput">
+
+              <li class="list-item">
+                <input type="checkbox" class="check">
+                <span class="list-text"></span>
+                <button><i class="far fa-edit"></i></button>
+                <button><i class="fas fa-times"></i></button>
+              </li>
+            </ul>
+            <div class="base" id="base">
+              <span id="counter"></span>
+              <div>
+                <button class="baseBtn all">All</button>
+                <button active" class="baseBtn active">Active</button>
+                <button class="baseBtn complete">Complete</button>
+              </div>
+              <button class="baseBtn clrBtn">Clear Complete <i class="fas fa-trash-alt"></i></button>
+            </div>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+  </section>
+
+  <script src="./js/quotes.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
