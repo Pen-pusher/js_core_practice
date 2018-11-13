@@ -13,5 +13,5 @@ function checkFunc(e) {
         checkNodeList[i].checked = true;
       }
     }
-  }
+  } 
 }
