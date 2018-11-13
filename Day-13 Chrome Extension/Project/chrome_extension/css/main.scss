@@ -1,5 +1,5 @@
 body {
-  color: #FFF;
+  color: #b00555;
   font-family: Helvetica, Arial, sans-serif;
 }
 .container{
@@ -100,11 +100,7 @@ body {
   // width: 100%;
   padding: 0 0 5px 0;
   list-style: none;
-  .lbtn{
-    background:transparent;
-    border:none;
-    padding : 3px;
-  }
+
   .list-item{
     display: grid;
     background: rgba(255, 255, 255, 0.24);
@@ -116,14 +112,54 @@ body {
     align-items: center;
     font-size: 1.2rem;
     &:first-child{
-      
+      border-top: 1px rgba(98, 98, 98, 0.753) solid;
+    }
+    &:hover{
+        background: rgba(255, 255, 255, 0.472);
+        .lbtn{
+          opacity: .8;
+      } 
+    }
+      .lbtn{
+    background:transparent;
+    border:none;
+    opacity: 0;
+    padding : 3px;
+    font-size: 1.2                                                                                                                                          ;
+    
+    &:hover{
+      opacity: 1;
+    }
+  }
+    div {
+      display: flex;
+      align-items: center;
     }
   }
   .check{
+    margin: 0 4px;
     background: transparent;
     width: 20px;
     height: 20px;
     border: 1px white solid;
   }
 
+}
+
+.base{
+  display:grid;
+  grid-template-columns: 1fr auto;
+  // place-items:center;
+  .counter{
+    grid-column: span 2;
+    padding: 3px;
+    justify-self: center;
+  }
+  button.clrBtn{
+    letter-spacing: .9;
+    line-height: .8;
+  }
+  .fas{
+    vertical-align: center;
+  }
 }

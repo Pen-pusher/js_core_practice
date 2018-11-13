@@ -2,9 +2,9 @@
 // ---STYLING-------
 // =================
 var back = document.querySelector(".container");
-var randoms = Math.floor((Math.random() * 19) + 1 );
+var randoms = Math.floor((Math.random() * 36) + 1 );
 back.style.background = `url("../img/B${randoms}.jpg")`;
-back.style.backgroundSize = 'cover';
+back.style.backgroundSize = '100%';
 
 
 
@@ -16,11 +16,12 @@ var greeting ='';
 
 function setClock() {
   const now = new Date();
-  const sec = now.getSeconds();
   const mins = now.getMinutes();
   const hour = now.getHours();
-
-  clock.innerText = `${hour}:${mins}:${sec}`;
+  if(hour >= 12) {
+    if(hour == 12) clock.innerText = `${hour}:${mins} PM`;
+      else clock.innerText = `${hour - 12}:${mins} PM`;
+  } else clock.innerText = `${hour}:${mins} AM`;
   if ( (hour > 4) && (hour < 12) ) greeting = "Good Morning, ";
   if ((hour >= 12) && (hour < 17)) greeting = "Good AfterNoon, ";
   if ((hour >= 17) && (hour < 21)) greeting = "Good Evening, ";
@@ -54,7 +55,7 @@ getName.addEventListener("keydown", event => {
     nameGreeter();
   }
 });
-setInterval(10000,nameGreeter);
+setInterval(nameGreeter,10000);
 
 
 // =================
@@ -78,7 +79,7 @@ function random() {
   var i = Math.floor(Math.random() * quotes.length);
   return i;
 }
-setInterval(50000, changeQuote);
+setInterval(changeQuote, 50000);
 changeQuote();
 quotebox.addEventListener("click", changeQuote)
 
@@ -86,9 +87,9 @@ quotebox.addEventListener("click", changeQuote)
 // ------ToDos------
 // =================
 
-var todoInput = document.getElementById('todoInput');
-var todoOutput = document.getElementById('todoOutput');
-
+const todoInput = document.getElementById('todoInput');
+const todoOutput = document.getElementById('todoOutput');
+const clrComplete = document.getElementById('clr');
 const form = document.getElementById('form');
 const base = document.getElementById('base');
 const counter = document.getElementById('counter');
@@ -113,7 +114,7 @@ function cnvrtToHTML() {
           <input type="checkbox" class="check" data-id="${i}" ${v.done ? "checked" : ''}>
           <span ${!v.done ? `class="list-text"` : `class="list-text strike"`}>${v.task}</span>
         </div>
-        <div>
+        <div class=>
           <button class="lbtn edit" data-id="${i}"><i class="edit far fa-edit" data-id="${i}"></i></button>
           <button class="lbtn delete" data-id="${i}"><i class="fas fa-times delete" data-id="${i}"></i></button>
         </div>
@@ -144,7 +145,7 @@ function statusList(arr) {
   }
 }
 function clearComplete() {
-  var newList = mainList.filter((v) => v.done == false);
+  var newList = mainList.filter((v) => v.done === false);
   mainList = newList;
   updtStorage();
 }
@@ -158,7 +159,7 @@ function baseAction(e) {
   if (e.target.classList.contains('complete')) {
     liveList = 1;
   }
-  if (e.target.classList.contains('clrBtn')) {
+  if (e.target.classList.contains("clrBtn")) {
     clearComplete();
     return;
   }
@@ -189,6 +190,7 @@ function rndrTodo(arr) {
     todoOutput.innerHTML += v;
   });
   counter.innerText = `Active : ${countActive}`;
+  hiding();
 }
 
 
@@ -243,6 +245,24 @@ function edit(index) {
 }
 
 updtStorage();
+
+// ------styling------
+
+function hiding() {
+  if(Number(mainList.length) === 0) {
+    base.style.display = "none";
+  } else{
+    base.style.display = "";
+  }
+  if ((Number(mainList.length) - countActive) === 0 ) {
+    clrComplete.style.display = "none"; 
+    base.style.textAlign = "center";
+  } else {
+    base.style.textAlign = "";
+    clrComplete.style.display = "";
+  }
+}
+
 
 todoOutput.addEventListener('click', btnAction);
 form.addEventListener("submit", addTodo);

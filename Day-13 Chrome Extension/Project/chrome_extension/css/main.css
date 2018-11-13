@@ -39,7 +39,7 @@ body {
 }
 
 .clock {
-  font-family: 'Special Elite', cursive;
+  font-family: 'Inconsolata', monospace;
   font-size: 6rem;
   position: absolute;
   left: 50%;
@@ -118,12 +118,6 @@ body {
   list-style: none;
 }
 
-.show-todo .lbtn {
-  background: transparent;
-  border: none;
-  padding: 3px;
-}
-
 .show-todo .list-item {
   display: -ms-grid;
   display: grid;
@@ -140,10 +134,72 @@ body {
   font-size: 1.2rem;
 }
 
+.show-todo .list-item:first-child {
+  border-top: 1px rgba(98, 98, 98, 0.753) solid;
+}
+
+.show-todo .list-item:hover {
+  background: rgba(255, 255, 255, 0.472);
+}
+
+.show-todo .list-item:hover .lbtn {
+  opacity: .8;
+}
+
+.show-todo .list-item .lbtn {
+  background: transparent;
+  border: none;
+  opacity: 0;
+  padding: 3px;
+  font-size: 1.2;
+}
+
+.show-todo .list-item .lbtn:hover {
+  opacity: 1;
+}
+
+.show-todo .list-item div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .show-todo .check {
+  margin: 0 4px;
   background: transparent;
   width: 20px;
   height: 20px;
   border: 1px white solid;
 }
+
+.base {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+}
+
+.base .counter {
+  grid-column: span 2;
+  padding: 3px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.base .clrBtn {
+  letter-spacing: .9;
+  line-height: .8;
+}
+
+.base .fas {
+  vertical-align: center;
+}
+.strike{
+	color: grey;
+	text-decoration: line-through;
+}
+
 /*# sourceMappingURL=main.css.map */
