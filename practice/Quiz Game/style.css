@@ -43,3 +43,9 @@ li p{
 .IT {
   background-color: #FFD35C;
 }
+.strBtn{
+  transition: transform .25s linear;
+}
+.strBtn:hover {
+  transform:  scale(1.01);
+}
