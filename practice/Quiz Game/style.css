@@ -5,6 +5,7 @@ button{
   margin: 0;
 }
 li{
+  overflow: hidden;
   background: rgba(235, 229, 229, 0.7);
   display: grid;
   /* align-content: center; */
@@ -44,8 +45,9 @@ li p{
   background-color: #FFD35C;
 }
 .strBtn{
-  transition: transform .25s linear;
+  border: none;
+  transition: transform .09s ease-in-out;
 }
 .strBtn:hover {
-  transform:  scale(1.01);
+  transform:  scale(1.5);
 }
