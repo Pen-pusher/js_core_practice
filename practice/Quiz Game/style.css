@@ -1,0 +1,45 @@
+.OBox{
+  width: 60%;
+}
+button{
+  margin: 0;
+}
+li{
+  background: rgba(235, 229, 229, 0.7);
+  display: grid;
+  /* align-content: center; */
+  grid-template-columns: 1fr auto;
+  padding: 10px;
+  border-radius:7px;;
+}
+li p{
+  align-self: center;
+  margin: 0;
+}
+#rBox{
+  padding: 10px 0;
+}
+.none{
+  display: none !important;
+}
+
+.questionWindow{
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+.questionWindow div{
+  padding: 20px 0;
+}
+.color{
+  background-color: rgb(192, 132, 192);
+}
+.capital {
+  background-color: #e93d54;
+}
+.science {
+  background-color: #BADA55;
+}
+.IT {
+  background-color: #FFD35C;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="skeleton.css" />
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section class="container">
+    <section class="questionWindow">
+      <section>
+        <h6 id="qIndex">Wanna Play A Quiz Game</h6>
+        <h3><span id="qText">which catagory you wanna play with</span>?</h3>
+
+        <ul id="optionBox" class="OBox">
+          <li>
+            <button class='strBtn color' >color</button>
+          </li>
+          <li>
+            <button class='strBtn capital' >capital</button>
+          </li>
+          <li>
+            <button class='strBtn science' >science</button>
+          </li>
+          <li>
+            <button class='strBtn IT' >IT</button>
+          </li>
+        </ul>
+      </section>
+      <div>
+        <br>
+        <hr>
+        <span id="qCurrent"></span>
+      </div>
+    </section>
+    <section class="resultWindow">
+      <section id="rBox">
+        <h6>Quiz Complete</h6>
+        <h3>Your Score Is :<span id="rText">3</span></h3>
+      </section>
+    </section>
+  </section>
+
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
