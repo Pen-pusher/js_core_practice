@@ -1,28 +1,18 @@
-const qtext = document.getElementById('qText');
-const optbox = document.getElementById('optionBox');
-const qwin = document.querySelector(".questionWindow");
-const rwin = document.querySelector(".resultWindow");
-const rtext = document.getElementById("rText");
+const qtext = document.getElementById('qText'); //where i want to out my question
+const optbox = document.getElementById('optionBox'); //the whole UL where option will render
+const qwin = document.querySelector(".questionWindow"); //the whole window for question + section (needed as after quiz end i want this window to vanish)
+const rwin = document.querySelector(".resultWindow"); //whole result window needed in end of quiz
+const rtext = document.getElementById("rText"); //score text
 
-
+// Question object 
 class Question {
   constructor(questStr, optionArray, correctAns) {
-    this.questText = questStr;
-    this.choice = optionArray;
-    this.ans = correctAns;
+    this.questText = questStr; //question text
+    this.choice = optionArray; //array of choices
+    this.ans = correctAns;    // correct ans from choices
   }
-  // isCorrectAns(e) {
-  //   if (!e.target) {
-  //     if (e == this.correctAns) return true;
-  //   } else {
-  //     let index = e.target.dataset.ansId;
-  //     if (this.choice[index] == correctAns) return true;
-  //   }
-  //   return false;
-  // }
 }
-
-
+// four set of questions object in form of array 
 var color = [
   new Question("what is color of taj mahal", ["red", "green", "white"], "white"),
   new Question("what is color of red fort", ["red", "green", "purple", "hsdfkj"], "red"),
@@ -53,30 +43,29 @@ var science = [
 
 class Quiz {
   constructor(ques) {
-    this.score = 0;
-    this.questions = ques;
-    this.currentIndex = 0;
+    this.score = 0; //score counter
+    this.questions = ques; //the array of questions object is passed and stored here
+    this.currentIndex = 0; //current question counter
   }
-  // renderDisplay() {
-  //   if (this.quizEnd()) {
-  //     this.scoreScreen();
-  //     return;
-  //   }
-  // }
 
+  //the initial screen is in html(catogory one) as someone click any catagory it initially goes to ansClick function
+
+
+
+//function to render question and choices on screen
   qScreen() {
-    if (this.quizEnd()) {
-      console.log("done");
+    if (this.quizEnd()) { //if quiz end render scorescreen
       this.scoreScreen();
     } else {
-      qwin.classList.remove("none");
-      rwin.classList.add("none");
+      qwin.classList.remove("none"); //if this question screen is display none remove none prop.
+      rwin.classList.add("none"); //display none score screen
       var q = this.questions[this.currentIndex];
-      console.log(q, "string");
-      qtext.innerText = q.questText;
-      optbox.innerHTML = "";
+      //just rendering additional things using IDs from HTML (not important)
+      qIndex.innerText = `Question no. ${this.currentIndex + 1}`;
+      qtext.innerText = q.questText; // render question
       qCurrent.innerText = ` Question No. ${this.currentIndex + 1} of ${this.questions.length}`;
-      qIndex.innerText = `Question no. ${this.questions.length}`;
+      optbox.innerHTML = "";
+      // render Choices array
       q.choice.forEach((v, i) => {
         optbox.innerHTML += `
         <li>
@@ -86,47 +75,54 @@ class Quiz {
       });
     }
   }
+  // print score screen
   scoreScreen() {
     rwin.classList.remove("none");
     qwin.classList.add("none");
     rtext.innerText = this.score;
   }
-  ansClick(e) {
 
+  // function from event listner is button is clicked
+  ansClick(e) {
+    //if button is from catogry window
     if (e.target.classList.contains("strBtn")) {
       if (e.target.classList.contains("capital")) {
-        this.questions = capital;
+        this.questions = capital; //if capital is clicked change question object array in Quiz.questions
       }
       if (e.target.classList.contains("science")) {
-        this.questions = science;
+        this.questions = science; //same
       }
       if (e.target.classList.contains("IT")) {
-        this.questions = IT;
+        this.questions = IT; //same
       }
-      this.qScreen();
+      this.qScreen(); //print question screen
     }
+
+    //else if button clicked from question window
     if (e.target.classList.contains("button-primary")) {
       e.preventDefault();
-      if (this.isCorrectAns(e)) {
+      if (this.isCorrectAns(e)) { //if correct ans increase score
         this.score++
       };
-      this.currentIndex++;
-      this.qScreen();
+      this.currentIndex++; //increase current question number
+      this.qScreen(); 
     }
   }
+  //function to check if quiz end or not
+  // if current question is same as length of all question(total no of question)
   quizEnd() {
     if (this.currentIndex >= this.questions.length) {
       return true;
     } else return false;
   }
+  //function to check if correct ans
   isCorrectAns(e) {
-    let index = e.target.dataset.ansid;
-    if (this.questions[this.currentIndex].choice[index] == this.questions[this.currentIndex].ans) return true;
+    let index = e.target.dataset.ansid; //retrive button index
+    if (this.questions[this.currentIndex].choice[index] == this.questions[this.currentIndex].ans) return true; //if choice on that button index is same as answer value
     return false;
   }
 }
 var newQuiz = new Quiz(color);
 // newQuiz.qScreen();
 
-// optbox.onclick = this.ansClick.bind(this);
-optbox.addEventListener("click", newQuiz.ansClick.bind(newQuiz));
+optbox.addEventListener("click", newQuiz.ansClick.bind(newQuiz)); //every button will this only event handler
