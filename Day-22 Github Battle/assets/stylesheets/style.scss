@@ -1,0 +1,82 @@
+button {
+  $width: 140px;
+  $border: 4px;
+  margin: 1rem auto;
+  color: rgb(49, 49, 49);
+  font-size: 12px;
+  height: 35px;
+  width: $width;
+  text-decoration: none;
+  border: $border solid rgb(49, 49, 49);
+  position: relative;
+  padding-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  transition: border-color .4s ease-in;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    height: 7px;
+    width: ($width / 5) + 1;
+    background-color: white;
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+    transition: left .35s ease-out, right .35s ease-out;
+  }
+
+  &::after {
+    bottom: -($border + 1px);
+    right: -($border + 1px);
+  }
+
+  &::before {
+    top: -($border + 1px);
+    left: -($border + 1px);
+  }
+
+  &:hover {
+
+    &::before {
+      left: ($width - ($width / 5) - $border);
+    }
+
+    &::after {
+      right: ($width - ($width / 5) - $border);
+    }
+
+  }
+}
+.fight_container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  .play1, .play2{
+    display:grid;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+  }
+  input{
+    border: 1px solid rgba(49, 49, 49, 0.452);
+    border-radius: 3px;
+    height: 28px;
+    width: 250px;
+  }
+}
+.battle-btnSec{
+  display: grid;
+  grid-auto-flow: row;
+  justify-content: center;
+  padding: 2rem;
+}
+.none{
+  display: none;
+}
+img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+

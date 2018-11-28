@@ -1,0 +1,91 @@
+button {
+  margin: 1rem auto;
+  color: #313131;
+  font-size: 12px;
+  height: 35px;
+  width: 140px;
+  text-decoration: none;
+  border: 4px solid #313131;
+  position: relative;
+  padding-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  -webkit-transition: border-color .4s ease-in;
+  transition: border-color .4s ease-in;
+  cursor: pointer;
+}
+
+button::before, button::after {
+  content: '';
+  position: absolute;
+  height: 7px;
+  width: 29px;
+  background-color: white;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+          clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+  -webkit-transition: left .35s ease-out, right .35s ease-out;
+  transition: left .35s ease-out, right .35s ease-out;
+}
+
+button::after {
+  bottom: -5px;
+  right: -5px;
+}
+
+button::before {
+  top: -5px;
+  left: -5px;
+}
+
+button:hover::before {
+  left: 108px;
+}
+
+button:hover::after {
+  right: 108px;
+}
+
+.fight_container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.fight_container .play1, .fight_container .play2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+  justify-items: center;
+}
+
+.fight_container input {
+  border: 1px solid rgba(49, 49, 49, 0.452);
+  border-radius: 3px;
+  height: 28px;
+  width: 250px;
+}
+
+.battle-btnSec {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem;
+}
+
+.none {
+  display: none;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=style.css.map */
