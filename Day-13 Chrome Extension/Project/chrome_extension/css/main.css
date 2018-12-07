@@ -10,6 +10,7 @@ body {
 .container {
   width: 100vw;
   height: 100vh;
+  background: '../img/B8.jpg';
 }
 
 .main-wrapper {
@@ -122,8 +123,9 @@ body {
   display: -ms-grid;
   display: grid;
   background: rgba(255, 255, 255, 0.24);
-  border: 1px rgba(98, 98, 98, 0.753) solid;
-  border-top: none;
+  border: 1px rgba(98, 98, 98, 0.3) solid;
+  border-right: 1px rgba(98, 98, 98, 0.8) solid; 
+  border-left:1px rgba(98, 98, 98, 0.8) solid;
   -ms-grid-columns: 1fr auto;
       grid-template-columns: 1fr auto;
   width: 100%;
@@ -135,7 +137,10 @@ body {
 }
 
 .show-todo .list-item:first-child {
-  border-top: 1px rgba(98, 98, 98, 0.753) solid;
+  border-top: 1px rgba(98, 98, 98, 0.8) solid;
+}
+.show-todo .list-item:last-child {
+  border-bottom: 1px rgba(98, 98, 98, 0.8) solid;
 }
 
 .show-todo .list-item:hover {

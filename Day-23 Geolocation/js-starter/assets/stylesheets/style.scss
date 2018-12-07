@@ -1,0 +1,17 @@
+header{
+  text-align: center;
+  padding: 0px 0 30px 0;
+}
+.container{
+  padding: 20px;
+  text-align: center;
+  #location{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+}

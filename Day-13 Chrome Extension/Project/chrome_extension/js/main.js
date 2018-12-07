@@ -2,11 +2,11 @@
 // ---STYLING-------
 // =================
 var back = document.querySelector(".container");
-var randoms = Math.floor((Math.random() * 36) + 1 );
-back.style.background = `url("../img/B${randoms}.jpg")`;
-back.style.backgroundSize = '100%';
-
-
+var backObject = fetch('https://api.unsplash.com/photos/random/?client_id=3a234ec27a627e9758593786273ab1299b800a8b86101b8cfe1a29720799ce09').then(x => x.json()).then(data => updtBackground(data));
+function updtBackground(data){
+  back.style.background = `url("${data.urls.regular}")`;
+  back.style.backgroundSize = '100%';
+}
 
 // =================
 // ------CLOCK------
