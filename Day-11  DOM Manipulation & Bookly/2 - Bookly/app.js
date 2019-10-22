@@ -63,7 +63,7 @@ function dltBook(e) {
 // ------HIDE ALL BOOKS-------
 function hideAllBooks(e) {
   var hddnArr = [];
-  if (e.target.checked == false) {
+  if (!e.target.checked) {
     hddnArr = htmlList;
   }
   rndrBooks(hddnArr);
