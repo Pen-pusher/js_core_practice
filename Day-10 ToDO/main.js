@@ -9,11 +9,10 @@ function renderFunc() {
   toDoList.map( (v,i) => {
     let toDoObj = v;
     let checked = v.checked;
-    let renderStr ="";
-    if(v.checked) {
-      renderStr = (`<input type = "checkbox" class = "check" data-id = "${i}" checked> <p data-id = "${i}" class = "checktrue"> ${toDoObj.listItem}</p> <button class="btn">del</button>`)
+    if(checked) {
+      let renderStr = (`<input type = "checkbox" class = "check" data-id = "${i}" checked> <p data-id = "${i}" class = "checktrue"> ${toDoObj.listItem}</p> <button class="btn">del</button>`)
     } else {
-      renderStr = (`<input type = "checkbox" class = "check" data-id = "${i}"> <p data-id = "${i}" > ${toDoObj.listItem}</p> <button class="btn" data-id="${i}">del</button>`)
+      let renderStr = (`<input type = "checkbox" class = "check" data-id = "${i}"> <p data-id = "${i}" > ${toDoObj.listItem}</p> <button class="btn" data-id="${i}">del</button>`)
     }
     let li = document.createElement("LI");
     li.innerHTML = renderStr;
